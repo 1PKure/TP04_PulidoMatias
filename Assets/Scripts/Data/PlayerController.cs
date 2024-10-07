@@ -57,9 +57,11 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
+            animator.SetBool("isGrounded", isGrounded);
         }
         if (collision.gameObject.CompareTag("Obstacle"))
         {
+            Debug.Log("Te chocaste con el obstaculo");
             playerData.life -= 10;
         }
 
